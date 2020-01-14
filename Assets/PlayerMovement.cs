@@ -18,6 +18,18 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
 
+    void Awake()
+    {
+        if(GameManager.Instance.Player)
+        {
+            Destroy(gameObject);
+        }
+        else{
+            GameManager.Instance.Player = gameObject;
+        }
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
